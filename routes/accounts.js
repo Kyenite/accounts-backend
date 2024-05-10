@@ -35,8 +35,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     var acc = new Accounts({
-        email: req.body.email,
-        password: req.body.password
+        userId: req.body.userId,
+        server: req.body.server,
+        status: req.body.status
     });
     acc.save()
     .then(doc => {
@@ -53,8 +54,9 @@ router.put('/:id', (req, res) => {
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
         var acc = {
-            email: req.body.email,
-            password: req.body.password
+            userId: req.body.userId,
+            server: req.body.server,
+            status: req.body.status
         };
 
         Accounts.findByIdAndUpdate(req.params.id, { $set: acc }, { new: true })

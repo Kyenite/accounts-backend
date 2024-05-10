@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 const accountSchema = new mongoose.Schema({
-  email: String,
-  password: String
+  userId: String,
+  server: String,
+  status: String
 });
 
 const Accounts = mongoose.model('accounts', accountSchema);
