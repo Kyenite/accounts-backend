@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/MEANCRUD', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://kyenite:medeldb@cluster0.ad4k20p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/MEANCRUD', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
